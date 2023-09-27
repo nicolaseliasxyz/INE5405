@@ -9,10 +9,10 @@ amostras_array = [float(numero) for numero in amostras.split(' ')]
 media = sum(amostras_array) / len(amostras_array)
 
 # Calcula o desvio
-desvios = [abs(x - media) for x in amostras_array]
+desvios = [x - media for x in amostras_array]
 
 # Calcula a variância
-variancia = sum([x ** 2 for x in desvios]) / len(desvios)
+variancia = statistics.variance(amostras_array)
 
 # Calcula o desvio padrão
 desvio_padrao = variancia ** 0.5
